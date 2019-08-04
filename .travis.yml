@@ -14,5 +14,5 @@ before_install:
   - docker build -t hirentariwala/docker-devops-reactapp -f Dockerfile.dev .
 
 # First service run hirentariwala/docker-devops-reactapp image with test command which return status code 
-service:
+script:
   - docker run -e CI=true hirentariwala/docker-devops-reactapp npm run test
