@@ -25,3 +25,11 @@ FROM nginx
 
 # copy from phase-1 build DIR to nginx default serving DIR usr/share/ngnix/html
 COPY --from=builder /app/build usr/share/nginx/html
+
+
+
+# docker build . (. represent current DIR) will run this file and build image
+# dokcer run -p <anyport>:3000 <image-id> 
+# now open localhost:<port> (user port which given as run)
+
+#image-id : copy hash which build using docker build . command

@@ -1,0 +1,15 @@
+# sudo permission set for setup
+sudo: required
+
+# set docker service
+service: 
+  - docker
+
+# execute before install (Command build docker image using Dockerfile.dev) set tag name as hirentariwala/docker-devops-reactapp
+# we can use hirentariwala/docker-devops-reactapp tagname as further process
+before_install:
+  - docker build -t hirentariwala/docker-devops-reactapp -f Dockerfile.dev .
+
+# First service run hirentariwala/docker-devops-reactapp image with test command which return status code 
+service:
+  - docker run hirentariwala/docker-devops-reactapp npm run test -- --coverage
