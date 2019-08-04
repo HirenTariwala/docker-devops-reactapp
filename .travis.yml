@@ -1,3 +1,6 @@
+# set language as genric
+language: generic
+
 # sudo permission set for setup
 sudo: required
 
@@ -12,4 +15,4 @@ before_install:
 
 # First service run hirentariwala/docker-devops-reactapp image with test command which return status code 
 service:
-  - docker run hirentariwala/docker-devops-reactapp npm run test -- --coverage
+  - docker run -e CI=true hirentariwala/docker-devops-reactapp npm run test
