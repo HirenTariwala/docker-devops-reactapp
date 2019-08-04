@@ -23,6 +23,9 @@ RUN npm run build
 # install nginx server 
 FROM nginx
 
+# it will expose port 80 ( we can see deployment on normal url ex. www.<anydomain>.com )
+EXPOSE 80
+
 # copy from phase-1 build DIR to nginx default serving DIR usr/share/ngnix/html
 COPY --from=builder /app/build usr/share/nginx/html
 
